@@ -14,10 +14,10 @@ class BookSpider(scrapy.Spider):
     def parse(self, response):
         product = response.css('div.product_main')
 
-        bookItem = BookItem()
-        bookItem['title'] = product.css('h1::text').extract_first()
-        bookItem['category'] = response.xpath("//ul[@class='breadcrumb']/li[@class='active']/preceding-sibling::li[1]/a/text()").extract_first()
-        bookItem['description'] = response.xpath("//div[@id='product_description']/following-sibling::p/text()").extract_first()
-        bookItem['price'] = response.css('p.price_color ::text').extract_first()
+        book_item = BookItem()
+        book_item['title'] = product.css('h1::text').extract_first()
+        book_item['category'] = response.xpath("//ul[@class='breadcrumb']/li[@class='active']/preceding-sibling::li[1]/a/text()").extract_first()
+        book_item['description'] = response.xpath("//div[@id='product_description']/following-sibling::p/text()").extract_first()
+        book_item['price'] = response.css('p.price_color ::text').extract_first()
         
-        yield bookItem
+        yield book_item
