@@ -13,7 +13,7 @@ SPIDER_MODULES = ["bookscraper.spiders"]
 NEWSPIDER_MODULE = "bookscraper.spiders"
 
 ADDONS = {}
-
+# filepath: /d:/2025work/github/scrapy/bookscraper/bookscraper/pipelines.py
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "bookscraper (+http://www.yourdomain.com)"
