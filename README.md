@@ -38,28 +38,30 @@
   
 ### ⭐️Learning Notes⭐️
 1. next page until no more pages
-   ```python
-   next_page = response.css("li.next a::attr(href)").get()
+```python
+next_page = response.css("li.next a::attr(href)").get()
 
-  if next_page is not None:
-      if 'catalogue/' in next_page:
-          next_page_url = 'https://books.toscrape.com/' + next_page
-      else:
-          next_page_url = 'https://books.toscrape.com/catalogue/' + next_page
-      yield response.follow(next_page_url, callback=self.parse)
-   ```
+if next_page is not None:
+   if 'catalogue/' in next_page:
+         next_page_url = 'https://books.toscrape.com/' + next_page
+   else:
+         next_page_url = 'https://books.toscrape.com/catalogue/' + next_page
+   yield response.follow(next_page_url, callback=self.parse)
+```
 
 2. Understand Xpath
-   ```python
-   response.xpath("//url[@class='breadcrumb']/li[@class='active']/preceding-sibling::li[1]/a/text()").get()
-   ```
+
+```python
+response.xpath("//url[@class='breadcrumb']/li[@class='active']/preceding-sibling::li[1]/a/text()").get()
+```
+
   If there is no class 
-   ```python
+```python
    response.xpath("//div[@class='product_description']/following-sibling::p/text()").get()
-   ```
+```
 
 3. Scrapy attributes
-   ```bash
+```bash
    response.css('p.star-rating').attrib['class']
    out: 'star-rating Three'
-   ```
+```
