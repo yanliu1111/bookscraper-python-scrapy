@@ -13,19 +13,26 @@ class SupabasePipeline:
 
         self.supabase: Client = create_client(supabase_url, supabase_api_key)
 
-    def process_item(self, item, spider):
+    @staticmethod
+    def clean_price(price_str):
+        # Remove currency symbol and convert to float
+        return float(price_str.replace("£", "").strip())
+
+    async def process_item(self, item, spider):
         data = {
-            "title": item.get("title"),
-            "category": item.get("category"),
-            "description": item.get("description"),
+            "title": item["name"],
+            "price": self.clean_price(item["price"]),
+            "url": item["url"]
         }
 
-        response = self.supabase.table("quotes").insert(data).execute()
-
-        if response.error:
-            spider.logger.error(f"Failed to insert item into Supabase: {response.error.message}")
-        else:
-            spider.logger.info(f"Item successfully inserted into Supabase: {response.data}")
+        try:
+            response = self.supabase.table("test").insert(data).execute()
+            if not response.data:
+                spider.logger.error(f"Failed to insert item into Supabase. Response: {response}")
+            else:
+                spider.logger.info(f"Item successfully inserted into Supabase: {response.data}")
+        except Exception as e:
+            spider.logger.error(f"Exception while inserting into Supabase: {e}")
 
         return item
 

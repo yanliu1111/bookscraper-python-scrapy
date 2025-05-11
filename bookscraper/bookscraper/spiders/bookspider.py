@@ -1,4 +1,5 @@
 import scrapy
+from bookscraper.items import BookItem   
 
 
 class BookspiderSpider(scrapy.Spider):
@@ -7,4 +8,10 @@ class BookspiderSpider(scrapy.Spider):
     start_urls = ["https://books.toscrape.com"]
 
     def parse(self, response):
-        pass
+        books = response.css("article.product_pod")
+        for book in books:
+            yield {
+                'name': book.css("h3 a::text").get(), 
+                'price': book.css(".product_price .price_color::text").get(),
+                'url': book.css("h3 a").attrib['href'],
+            }
