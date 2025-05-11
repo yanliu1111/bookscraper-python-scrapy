@@ -21,6 +21,8 @@
 - Scrapy Shell
 - Supabase
 - itemadapter
+- [userAgent](https://useragentstring.com/)
+- scrapeOps: create Fake User-Agent API 
 
 ### ⭐️Course Resources⭐️
 - [Scrapy Docs](https://docs.scrapy.org/en/latest/)
