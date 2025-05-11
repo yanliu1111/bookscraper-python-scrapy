@@ -44,7 +44,7 @@ class SupabasePipeline:
                 adapter[key] = self.clean_price(value)
 
         # Parse availability
-        availability_string = adapter.get('availability', '')
+        availability_string = adapter.get('availability', '') # Default to empty string if not present
         if '(' in availability_string:
             availability = availability_string.split('(')[1].split(' ')[0]
             adapter['availability'] = int(availability)
