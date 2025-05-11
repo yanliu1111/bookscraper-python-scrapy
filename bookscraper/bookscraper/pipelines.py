@@ -89,11 +89,13 @@ class SupabasePipeline:
         # Send data to Supabase
         response = self.supabase.table("books").insert(data).execute()
 
-        # Handle Supabase response
-        if response.error:
-            spider.logger.error(f"Failed to insert item into Supabase: {response.error}")
+         # Handle Supabase response
+        if not response.data:  # Check if the response contains data
+            spider.logger.error(f"Failed to insert item into Supabase: {response}")
         else:
             spider.logger.info(f"Item successfully inserted into Supabase: {response.data}")
+
+
 
         return item
 

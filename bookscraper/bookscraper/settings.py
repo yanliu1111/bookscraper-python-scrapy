@@ -11,7 +11,16 @@ BOT_NAME = "bookscraper"
 
 SPIDER_MODULES = ["bookscraper.spiders"]
 NEWSPIDER_MODULE = "bookscraper.spiders"
-
+FEEDS = {
+   #  'booksdata.json': {
+   #      'format': 'json',
+   #      'overwrite': True,
+   #  },
+    'booksdata.csv': {
+        'format': 'csv',
+        'overwrite': True,
+    },
+}
 ADDONS = {}
 # filepath: /d:/2025work/github/scrapy/bookscraper/bookscraper/pipelines.py
 
