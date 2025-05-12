@@ -25,7 +25,7 @@ This repository contains three learning sessions built as part of the FreeCode C
 - Supabase
 - itemadapter
 - [userAgent](https://useragentstring.com/)
-- scrapeOps: create Fake User-Agent API
+- [scrapeOps](https://scrapeops.io/): create Fake User-Agent API
 - Free proxy list
   - Github resource for [scrapy-rotating-proxies](https://github.com/TeamHG-Memex/scrapy-rotating-proxies?tab=readme-ov-file) 
   - scrapeops.io - proxy aggregator
