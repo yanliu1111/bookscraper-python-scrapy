@@ -29,6 +29,7 @@ This repository contains three learning sessions built as part of the FreeCode C
 - Free proxy list
   - Github resource for [scrapy-rotating-proxies](https://github.com/TeamHG-Memex/scrapy-rotating-proxies?tab=readme-ov-file) 
   - scrapeops.io - proxy aggregator
+- Run spider in [zyte](https://app.zyte.com/account/login) cloud, connect github repository and set schedule to run spider file periodically.
 
 ### ⭐️Course Resources⭐️
 - [Scrapy Docs](https://docs.scrapy.org/en/latest/)
