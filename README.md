@@ -1,5 +1,8 @@
 # Bookscraper 🕷🕸
-## Get started with FreeCode Camp Python Scrapy Course
+
+## Get started with FreeCode Camp Python Scrapy Course  
+This repository contains three learning sessions built as part of the FreeCode Camp Python Scrapy Course. The first folder, `bookscraper`, is a basic Scrapy project that demonstrates how to scrape data from websites using HTML tags, covering fundamental concepts like extracting data with XPath and CSS selectors. The second folder, `bookscraper-userAgent`, focuses on creating a Fake User-Agent API and dynamically building HTTP headers, such as `User-Agent` and `Accept-Language`, to mimic real browser requests and avoid detection or blocking. The third folder, `bookscraper-proxy`, explores methods to change the IP address during scraping by integrating proxy rotation using the `scrapy-rotating-proxies` middleware and configuring proxy lists to ensure anonymity and bypass anti-scraping mechanisms.
+
 ### ⭐️Sections⭐️
 📍 Part 1 - Scrapy & Course Introduction <br>
 📍 Part 2 - Setup Virtual Env & Scrapy<br>
@@ -22,7 +25,10 @@
 - Supabase
 - itemadapter
 - [userAgent](https://useragentstring.com/)
-- scrapeOps: create Fake User-Agent API 
+- scrapeOps: create Fake User-Agent API
+- Free proxy list
+  - Github resource for [scrapy-rotating-proxies](https://github.com/TeamHG-Memex/scrapy-rotating-proxies?tab=readme-ov-file) 
+  - scrapeops.io - proxy aggregator
 
 ### ⭐️Course Resources⭐️
 - [Scrapy Docs](https://docs.scrapy.org/en/latest/)
