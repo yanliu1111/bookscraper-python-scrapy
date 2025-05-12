@@ -1,7 +1,7 @@
 # Bookscraper 🕷🕸
 
 ## Get started with FreeCode Camp Python Scrapy Course  
-This repository contains three learning sessions built as part of the FreeCode Camp Python Scrapy Course. The first folder, `bookscraper`, is a basic Scrapy project that demonstrates how to scrape data from websites using HTML tags, covering fundamental concepts like extracting data with XPath and CSS selectors. The second folder, `bookscraper-userAgent`, focuses on creating a Fake User-Agent API and dynamically building HTTP headers, such as `User-Agent` and `Accept-Language`, to mimic real browser requests and avoid detection or blocking. The third folder, `bookscraper-proxy`, explores methods to change the IP address during scraping by integrating proxy rotation using the `scrapy-rotating-proxies` middleware and configuring proxy lists to ensure anonymity and bypass anti-scraping mechanisms.
+This repository contains three learning sessions built as part of the FreeCode Camp Python Scrapy Course. The first folder, `bookscraper`, is a basic Scrapy project that demonstrates how to scrape data from websites using HTML tags, covering fundamental concepts like extracting data with XPath and CSS selectors. The second folder, `bookscraper-userAgent`, focuses on creating a Fake User-Agent API and dynamically building HTTP headers, such as `User-Agent` and `Accept-Language`, to mimic real browser requests and avoid detection or blocking. The third folder, `bookscraper-proxy`, explores methods to change the IP address during scraping by integrating proxy rotation using the `scrapy-rotating-proxies` middleware and configuring proxy lists to ensure anonymity and bypass anti-scraping mechanisms. All three sessions to build robust web scraping applications and send data to a PostgreSQL database using Supabase. The learning purpose is designed for covering the basics of web scraping, including how to extract data from websites, clean and store in cloud db, and avoid detection by using fake user agents and proxies.
 
 ### ⭐️Sections⭐️
 📍 Part 1 - Scrapy & Course Introduction <br>
@@ -71,4 +71,25 @@ response.xpath("//url[@class='breadcrumb']/li[@class='active']/preceding-sibling
 ```bash
    response.css('p.star-rating').attrib['class']
    out: 'star-rating Three'
+```
+
+Note:<br>
+Create table in supabase
+```sql
+CREATE TABLE IF NOT EXISTS books (
+    id serial PRIMARY KEY,
+    url VARCHAR(255),
+    title TEXT,
+    upc VARCHAR(50),
+    product_type TEXT,
+    price_excl_tax NUMERIC,
+    price_incl_tax NUMERIC,
+    tax NUMERIC,
+    availability TEXT,
+    num_reviews INTEGER,
+    stars NUMERIC,
+    category TEXT,
+    description TEXT,
+    price NUMERIC
+);
 ```
